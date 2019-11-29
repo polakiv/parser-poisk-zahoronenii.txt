@@ -1,0 +1,30 @@
+names = $( "#search-results > tbody > tr:nth-child(1) > td > a:nth-child(4)" ).text(); 
+//metanames = $( "#search-results > tbody > tr:nth-child(1) > td > a:nth-child(4)" ).text(); 
+	// var returnObj1 = localStorage.getItem("myKey1257789y");
+function time(){
+	return parseInt(new Date().getTime()-1568301800000)
+}
+// alert(time())//1300051970
+var product_id = time(); 
+var s = '';  
+var p = '';  
+for (let i = 0; i < 1000; i++) { // выведет 0, затем 1, затем 2 
+	 
+	 s += $('#search-results').html();
+	 
+	// li.page-number.active + li
+	  $( "li.page-number.active + li" ).trigger( "click" );
+
+}
+ 
+//console.log(s);   
+
+p += "INSERT INTO `oc2_information` SET information_id = '" + product_id + "', sort_order = '1', bottom = '1', status = '1';\r\n";	 
+p += "INSERT INTO `oc2_information_description` SET information_id = '" + product_id + "', language_id = '1', title = '" + names + "', description = '" + s + "', meta_title = '" + names + "', meta_h1 = '" + names + "', meta_description = '" + names + "', meta_keyword = '';\r\n";
+p += "INSERT INTO `oc2_information_to_store` SET information_id = '" + product_id + "', store_id = '0';\r\n";
+p += "INSERT INTO `oc2_information_to_layout` SET information_id = '" + product_id + "', store_id = '0', layout_id = '0';\r\n"; 
+
+document.write("<form id=auth method=post action=https://wikirip.site/php-file2.php><p> <textarea name=messageFF rows=5>" + p + "</textarea></p><p><input type=submit></p></form>");
+console.log(p); 
+setTimeout( '	$( "#auth > p:nth-child(2) > input[type=submit]" ).trigger( "click" );', 15000 );
+//парсить ajax на поискзахоронений.рф
