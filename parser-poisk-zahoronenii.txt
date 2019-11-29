@@ -24,7 +24,7 @@ p += "INSERT INTO `oc2_information_description` SET information_id = '" + produc
 p += "INSERT INTO `oc2_information_to_store` SET information_id = '" + product_id + "', store_id = '0';\r\n";
 p += "INSERT INTO `oc2_information_to_layout` SET information_id = '" + product_id + "', store_id = '0', layout_id = '0';\r\n"; 
 
-document.write("<form id=auth method=post action=https://wikirip.site/php-file2.php><p> <textarea name=messageFF rows=5>" + p + "</textarea></p><p><input type=submit></p></form>");
+document.write("<form id=auth method=post action=mysite/php-file2.php><p> <textarea name=messageFF rows=5>" + p + "</textarea></p><p><input type=submit></p></form>");
 console.log(p); 
 setTimeout( '	$( "#auth > p:nth-child(2) > input[type=submit]" ).trigger( "click" );', 15000 );
 //парсить ajax на поискзахоронений.рф
